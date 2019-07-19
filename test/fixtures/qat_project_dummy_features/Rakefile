@@ -1,0 +1,33 @@
+#!/usr/bin/env rake
+#encoding: utf-8
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rake/testtask'
+require 'qat/reporter/xray/tasks'
+
+task :vcr do
+  puts "USING VCR CASSETTE '#{ENV['VCR_CASSETTE_NAME']}'"
+
+  require 'vcr'
+  VCR.configure do |config|
+    config.cassette_library_dir = "fixtures/vcr_cassettes"
+    config.debug_logger = File.open('vcr_debug.log', File::CREAT | File::TRUNC | File::RDWR)
+    config.hook_into :webmock
+    config.default_cassette_options = {allow_unused_http_interactions: false, decode_compressed_response: true, record: :none}
+  end
+
+  VCR.eject_cassette&.tap do |cassette|
+    puts "CLOSED VCR CASSETTE '#{cassette.name}' -> #{cassette.file}"
+  end
+  VCR.insert_cassette(ENV['VCR_CASSETTE_NAME']).tap{|i| STDOUT.puts i.file}
+
+  at_exit do
+    VCR.eject_cassette&.tap do |cassette|
+      puts "CLOSED VCR CASSETTE '#{cassette.name}' -> #{cassette.file}"
+    end
+  end
+end
+
+Rake::Task['qat:reporter:xray:tests:import_features'].prerequisites.unshift :vcr
+Rake::Task['qat:reporter:xray:tests:export_xray_test_scenarios'].prerequisites.unshift :vcr
+

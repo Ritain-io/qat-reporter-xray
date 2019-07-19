@@ -1,0 +1,20 @@
+log4r_config:
+
+  loggers:
+    - name: QAT::Formatter
+      level: 'ALL'
+      outputters:
+        - qat_console_outputter
+
+  outputters:
+    - type: QatConsoleOutputter
+      name: qat_console_outputter
+
+    - type: QatRemoteOutputter
+      name: ReqCoverage
+      server: "127.0.0.1"
+      port: 12202
+      facility: 'QAT Requirement Coverage'
+      formatter:
+        type: PatternFormatter
+        pattern: "%m"

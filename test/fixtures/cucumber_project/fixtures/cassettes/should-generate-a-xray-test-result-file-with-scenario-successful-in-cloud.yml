@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://xray.cloud.xpand-it.com/api/v1/authenticate
+    body:
+      encoding: UTF-8
+      string: client_id=client_id&client_secret=client_secret
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Length:
+      - '121'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 31 May 2019 09:41:25 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Access-Token:
+      - access_bearer_token
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '338'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '"access_bearer_token"'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 09:41:25 GMT
+- request:
+    method: post
+    uri: https://xray.cloud.xpand-it.com/api/v1/import/execution
+    body:
+      encoding: UTF-8
+      string: '{"info":{"summary":"Execution of automated tests 2019-05-31 10:41:24","description":"This
+        execution is automatically created when importing execution results from an
+        external source","startDate":"2019-05-31T10:41:23+01:00","finishDate":"2019-05-31T10:41:24+01:00","version":"1.0","revision":"2.0","testEnvironments":["dummy"]},"tests":[{"testKey":"QAD-1","start":"2019-05-31T10:41:23+01:00","finish":"2019-05-31T10:41:24+01:00","comment":"","status":"PASSED"}]}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer access_bearer_token
+      Content-Length:
+      - '461'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 31 May 2019 09:41:28 GMT
+      Etag:
+      - W/"5b-avzVEQoqL9EY+K1AH4PtQMqYXRQ"
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '91'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"10006","key":"QAD-7","self":"https://qadtests.atlassian.net/rest/api/2/issue/10006"}'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 09:41:28 GMT
+recorded_with: VCR 5.0.0

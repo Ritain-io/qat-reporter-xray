@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.jira.com/rest/raven/1.0/import/feature?projectKey=QAT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS0tLS0tUnVieUZvcm1Cb3VuZGFyeWV3UzNlM3A2bW94eTM1M0kNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0iZmlsZSI7IGZpbGVuYW1lPSJmZWF0dXJlcy56aXAiDQpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL3ppcA0KDQpQSwMEFAAAAAgApKu/TmXW1gGuAAAAhgEAABkAAABmZWF0dXJlcy9leGFtcGxlMS5mZWF0dXJlrc5NCsIwGEXReaF7eBtQSIcZFRFdgIJDiclnG7RJyU/R3ds2rRTFmbPkHRJuqWLTPM9XEiE6Ynm2SyeO7QCYAL3kGbAR8lY5G43iELi8b4MBe92RgbcNoXW08hSCNpVPT0svyQinLUOpFWf9dJgWjtnA1uzrL2mN0kFb4xOd6lmEHGeIvrARipIfBxdw5OM9QPcsa00dqY+QYgwpfoUUfwoxoEdLMpBaJBkbFlkvUEsDBBQAAAAIAKSrv048I9P72QAAAOcCAAAZAAAAZmVhdHVyZXMvZXhhbXBsZTIuZmVhdHVyZd2QvQrCMBSFd6HvcOgDCLa6lCId/BkdFBwlNlcNNIk0bVHow5s2Lf6goKtbcr57k4+T8FLK6+5ArChzCrzBwp0izBqADsASbwAkJiXFcqFHSASPQhutuyRCzxAMR80wsBQVKRgtCalWXBRCK+PQ9tQTlrYxmP1GMk6ObxrOkJMpswLC4vQkqCL+IhK0IuMHEazKIhOKHoS0S6xY8IOYHzu1qd85Nhovhn7sDO3MJ1VgfmHynJGJ3BWo+wfrfqu+o6PW/OnwBu0Zh0NPZYRtGZNvywj/rYyPWzdQSwECNAMUAAAACACkq79OZdbWAa4AAACGAQAAGQAAAAAAAAABAAAA+IEAAAAAZmVhdHVyZXMvZXhhbXBsZTEuZmVhdHVyZVBLAQI0AxQAAAAIAKSrv048I9P72QAAAOcCAAAZAAAAAAAAAAEAAAD4geUAAABmZWF0dXJlcy9leGFtcGxlMi5mZWF0dXJlUEsFBgAAAAACAAIAjgAAAPUBAAAAAA0KLS0tLS0tUnVieUZvcm1Cb3VuZGFyeWV3UzNlM3A2bW94eTM1M0ktLQ0K
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.4p296
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryewS3e3p6moxy353I
+      Authorization:
+      - Basic authorization_token
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '852'
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 141x13087x1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Asen:
+      - SEN-L13677260
+      Set-Cookie:
+      - JSESSIONID=0DA43A64EF8482803663C4DF6980A9A1; Path=/; HttpOnly
+      - atlassian.xsrf.token=B247-F6KP-EMDR-2G15_654bd3d4ecdb54b43f3da519d10cf050615a158c_lin;
+        Path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - mk1oun
+      X-Ausername:
+      - username
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Sat, 01 Jun 2019 01:21:06 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"10021","key":"QAT-4","self":"http://test.jira.com/rest/api/2/issue/10021"},{"id":"10022","key":"QAT-5","self":"http://test.jira.com/rest/api/2/issue/10022"},{"id":"10018","key":"QAT-1","self":"http://test.jira.com/rest/api/2/issue/10018"},{"id":"10019","key":"QAT-2","self":"http://test.jira.com/rest/api/2/issue/10019"},{"id":"10020","key":"QAT-3","self":"http://test.jira.com/rest/api/2/issue/10020"}]'
+    http_version: 
+    adapter_metadata:
+      vcr_decompressed: gzip
+  recorded_at: Sat, 01 Jun 2019 01:29:09 GMT
+recorded_with: VCR 5.0.0

@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test.jira.com/rest/api/2/issue/QAT-7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic authorization_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 546x13018x1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Asen:
+      - SEN-L13677260
+      Set-Cookie:
+      - JSESSIONID=9EC18DD58BC4D54542232FFCD20CAA19; Path=/; HttpOnly
+      - atlassian.xsrf.token=B247-F6KP-EMDR-2G15_4af0be712b6e3052e444932908c96f3a508f176c_lin;
+        Path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 1yv9yk6
+      X-Ausername:
+      - username
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 31 May 2019 08:06:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"expand":"renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations","id":"10024","self":"http://192.168.19.24:8000/rest/api/2/issue/10024","key":"QAT-7","fields":{"issuetype":{"self":"http://192.168.19.24:8000/rest/api/2/issuetype/10005","id":"10005","description":"Represents
+        a Test Execution","iconUrl":"http://192.168.19.24:8000/download/resources/com.xpandit.plugins.xray/images/test-execution.png","name":"Test
+        Execution","subtask":false},"timespent":null,"project":{"self":"http://192.168.19.24:8000/rest/api/2/project/10003","id":"10003","key":"QAT","name":"QAT","avatarUrls":{"48x48":"http://192.168.19.24:8000/secure/projectavatar?avatarId=10324","24x24":"http://192.168.19.24:8000/secure/projectavatar?size=small&avatarId=10324","16x16":"http://192.168.19.24:8000/secure/projectavatar?size=xsmall&avatarId=10324","32x32":"http://192.168.19.24:8000/secure/projectavatar?size=medium&avatarId=10324"}},"customfield_10032":["dummy"],"fixVersions":[{"self":"http://192.168.19.24:8000/rest/api/2/version/10001","id":"10001","description":"","name":"1.0","archived":false,"released":false}],"customfield_10034":[],"aggregatetimespent":null,"resolution":null,"customfield_10027":{"count":4,"statuses":[{"id":0,"name":"PASS","description":"The
+        test run has passed","isFinal":true,"color":"#95C160","isNative":true,"statusCount":2,"statusPercent":50.0},{"id":3,"name":"FAIL","description":"The
+        test run has failed","isFinal":true,"color":"#D45D52","isNative":true,"statusCount":2,"statusPercent":50.0},{"id":4,"name":"ABORTED","description":"The
+        test run was aborted","isFinal":true,"color":"#111111","isNative":true,"statusCount":0,"statusPercent":0.0},{"id":2,"name":"EXECUTING","description":"The
+        test run is currently being executed","isFinal":false,"color":"#F1E069","isNative":true,"statusCount":0,"statusPercent":0.0},{"id":1,"name":"TODO","description":"The
+        test run has not started","isFinal":false,"color":"#A2A6AE","isNative":true,"statusCount":0,"statusPercent":0.0}]},"resolutiondate":null,"workratio":-1,"lastViewed":"2019-05-29T14:34:22.988+0100","watches":{"self":"http://192.168.19.24:8000/rest/api/2/issue/QAT-7/watchers","watchCount":1,"isWatching":true},"created":"2019-05-29T10:37:09.775+0100","customfield_10022":[{"b":"QAT-1","c":13},{"b":"QAT-2","c":14},{"b":"QAT-4","c":15},{"b":"QAT-5","c":16}],"priority":null,"customfield_10023":null,"customfield_10024":"2019-05-30T17:58:00.000+0100","customfield_10025":"2019-05-30T17:58:00.000+0100","labels":[],"customfield_10026":"1.0","timeestimate":null,"aggregatetimeoriginalestimate":null,"versions":[],"issuelinks":[],"assignee":{"self":"http://192.168.19.24:8000/rest/api/2/user?username=eduardo.marcelo","name":"eduardo.marcelo","key":"eduardo.marcelo","emailAddress":"eduardo.marcelo@readinessit.com","avatarUrls":{"48x48":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=48","24x24":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=24","16x16":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=16","32x32":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=32"},"displayName":"eduardo.marcelo@readinessit.com","active":true,"timeZone":"Europe/Lisbon"},"updated":"2019-05-30T17:50:34.548+0100","status":{"self":"http://192.168.19.24:8000/rest/api/2/status/10000","description":"","iconUrl":"http://192.168.19.24:8000/","name":"To
+        Do","id":"10000","statusCategory":{"self":"http://192.168.19.24:8000/rest/api/2/statuscategory/2","id":2,"key":"new","colorName":"blue-gray","name":"To
+        Do"}},"components":[],"timeoriginalestimate":null,"description":"This execution
+        is automatically created when importing execution results from an external
+        source","timetracking":{},"customfield_10005":null,"attachment":[],"aggregatetimeestimate":null,"summary":"Execution
+        of automated tests 2019-05-29 10:45:08","creator":{"self":"http://192.168.19.24:8000/rest/api/2/user?username=eduardo.marcelo","name":"eduardo.marcelo","key":"eduardo.marcelo","emailAddress":"eduardo.marcelo@readinessit.com","avatarUrls":{"48x48":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=48","24x24":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=24","16x16":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=16","32x32":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=32"},"displayName":"eduardo.marcelo@readinessit.com","active":true,"timeZone":"Europe/Lisbon"},"subtasks":[],"reporter":{"self":"http://192.168.19.24:8000/rest/api/2/user?username=eduardo.marcelo","name":"eduardo.marcelo","key":"eduardo.marcelo","emailAddress":"eduardo.marcelo@readinessit.com","avatarUrls":{"48x48":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=48","24x24":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=24","16x16":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=16","32x32":"https://www.gravatar.com/avatar/d2e2f198de2dcd6c4a31218b02a74602?d=mm&s=32"},"displayName":"eduardo.marcelo@readinessit.com","active":true,"timeZone":"Europe/Lisbon"},"customfield_10000":"0|i0005b:","aggregateprogress":{"progress":0,"total":0},"customfield_10001":null,"environment":null,"duedate":null,"progress":{"progress":0,"total":0},"comment":{"comments":[],"maxResults":0,"total":0,"startAt":0},"votes":{"self":"http://192.168.19.24:8000/rest/api/2/issue/QAT-7/votes","votes":0,"hasVoted":false},"worklog":{"startAt":0,"maxResults":20,"total":0,"worklogs":[]}}}'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 08:14:12 GMT
+- request:
+    method: post
+    uri: http://test.jira.com/rest/raven/1.0/import/execution
+    body:
+      encoding: UTF-8
+      string: '{"info":{"startDate":"2019-05-31T09:14:10+01:00","finishDate":"2019-05-31T09:14:12+01:00","version":"1.0","revision":"1.0","testEnvironments":["dummy"]},"tests":[{"testKey":"QAT-2","start":"2019-05-31T09:14:10+01:00","finish":"2019-05-31T09:14:12+01:00","comment":"","status":"PASS","examples":["PASS","PASS"]}],"testExecutionKey":"QAT-7"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic authorization_token
+      Content-Length:
+      - '339'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 546x13019x1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Asen:
+      - SEN-L13677260
+      Set-Cookie:
+      - JSESSIONID=0302A46E30E2634BADA0400599B76AB1; Path=/; HttpOnly
+      - atlassian.xsrf.token=B247-F6KP-EMDR-2G15_b4caadcabf94836b1b5d84afc551d3b1f2ccb3d7_lin;
+        Path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 7uaaat
+      X-Ausername:
+      - username
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 31 May 2019 08:06:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"testExecIssue":{"id":"10024","key":"QAT-7","self":"http://192.168.19.24:8000/rest/api/2/issue/10024"}}'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 08:14:13 GMT
+recorded_with: VCR 5.0.0

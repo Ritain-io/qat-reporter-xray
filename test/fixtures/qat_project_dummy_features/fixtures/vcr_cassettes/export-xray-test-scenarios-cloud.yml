@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://xray.cloud.xpand-it.com/api/v1/authenticate
+    body:
+      encoding: UTF-8
+      string: client_id=client_id&client_secret=client_secret
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Length:
+      - '121'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 03 Jun 2019 13:44:39 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Access-Token:
+      - token
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '399'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiI5ZjEwNmU5OS1hMDE5LTMyM2YtOWE0ZS1iNWY1YTcxNzZjZDgiLCJhY2NvdW50SWQiOiI1Y2YwZTU1ZGJjZGE4MjBmYmNlNzJlYjQiLCJpYXQiOjE1NTk1Njk0NzksImV4cCI6MTU1OTY1NTg3OSwiYXVkIjoiRUEzM0MwRUVDMjAzNDhGQTk4MzI1M0M2MTg4MzRFMDAiLCJpc3MiOiJjb20ueHBhbmRpdC5wbHVnaW5zLnhyYXkiLCJzdWIiOiJFQTMzQzBFRUMyMDM0OEZBOTgzMjUzQzYxODgzNEUwMCJ9.oMhPkyn01byZ5wLsbhBhH9KQmyq-duvgDm2XOcozYSU"'
+    http_version: 
+    adapter_metadata:
+      vcr_decompressed: gzip
+  recorded_at: Mon, 03 Jun 2019 13:44:39 GMT
+- request:
+    method: get
+    uri: https://xray.cloud.xpand-it.com/api/v1/export/cucumber?keys=QAD-1%3BQAD-2%3BQAD-4%3BQAD-5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer token
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Disposition:
+      - attachment; filename="featureBundle.zip"
+      Content-Type:
+      - application/zip
+      Date:
+      - Mon, 03 Jun 2019 13:44:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '956'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        UEsDBAoAAAAAAJRtw06n/l1uhwEAAIcBAAAKAAAAMV8uZmVhdHVyZUZlYXR1cmU6IAoKCUBURVNUX1FBRC01IEBzY2VuYXJpbzIKCVNjZW5hcmlvIE91dGxpbmU6IHNjZW5hcmlvIG91dGxpbmUgMi4yCgkJR2l2ZW4gc29tZSBjb25kaXRpb25zCgkJV2hlbiBzb21lICI8YWN0aW9uPiIgYWN0aW9uIGlzIG1hZGUKCQlUaGVuICI8cmVzdWx0PiIgcmVzdWx0IGlzIGFjaGlldmVkCgkJCgkJCUV4YW1wbGVzOgoJCQkJfCBhY3Rpb24gfCByZXN1bHQgfAoJCQkJfCBnb29kICAgfCBnb29kICAgfAoJCQkJfCBnb29kICAgfCBiYWQgICAgfAoJQFRFU1RfUUFELTQgQHNjZW5hcmlvMQoJU2NlbmFyaW86IHNjZW5hcmlvIDIuMQoJCUdpdmVuIHNvbWUgY29uZGl0aW9ucwoJCVdoZW4gc29tZSBhY3Rpb25zIGFyZSBtYWRlCgkJVGhlbiBhIHJlc3VsdCBpcyBhY2hpZXZlZApQSwMECgAAAAAAlG3DTpvisJVVAQAAVQEAAA8AAAAyX1FBRC0zLmZlYXR1cmVGZWF0dXJlOiAKCglCYWNrZ3JvdW5kOgoJCSNAUFJFQ09ORF9RQUQtMwoJCUdpdmVuIHNvbWUgcHJlLXNldHRpbmdzCgoJQFRFU1RfUUFELTIgQHNjZW5hcmlvMgoJU2NlbmFyaW86IHNjZW5hcmlvIDEuMgoJCUdpdmVuIHNvbWUgY29uZGl0aW9ucwoJCVdoZW4gc29tZSBhY3Rpb25zIGFyZSBtYWRlCgkJVGhlbiBhbiBleHBlY3RlZCByZXN1bHQgaXMgbm90IGFjaGlldmVkCglAVEVTVF9RQUQtMSBAc2NlbmFyaW8xCglTY2VuYXJpbzogc2NlbmFyaW8gMS4xCgkJR2l2ZW4gc29tZSBjb25kaXRpb25zCgkJV2hlbiBzb21lIGFjdGlvbnMgYXJlIG1hZGUKCQlUaGVuIGEgcmVzdWx0IGlzIGFjaGlldmVkClBLAQIUAAoAAAAAAJRtw06n/l1uhwEAAIcBAAAKAAAAAAAAAAAAAAAAAAAAAAAxXy5mZWF0dXJlUEsBAhQACgAAAAAAlG3DTpvisJVVAQAAVQEAAA8AAAAAAAAAAAAAAAAArwEAADJfUUFELTMuZmVhdHVyZVBLBQYAAAAAAgACAHUAAAAxAwAAAAA=
+    http_version: 
+  recorded_at: Mon, 03 Jun 2019 13:44:40 GMT
+recorded_with: VCR 5.0.0

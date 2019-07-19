@@ -1,0 +1,6 @@
+#!/usr/bin/env rake
+#encoding: utf-8
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rake/testtask'
+require 'qat/reporter/xray/tasks'

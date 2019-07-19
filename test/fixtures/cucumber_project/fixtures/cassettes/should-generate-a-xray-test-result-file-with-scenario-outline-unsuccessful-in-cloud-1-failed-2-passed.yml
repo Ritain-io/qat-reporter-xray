@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://domain.net/rest/api/2/issue/QAD-7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic access_bearer_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - domain.net
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - AtlassianProxy/1.15.8.1
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Content-Type:
+      - application/json;charset=UTF-8
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains; preload
+      Date:
+      - Fri, 31 May 2019 09:57:55 GMT
+      Atl-Traceid:
+      - ed2efdd2a9151427
+      X-Aaccountid:
+      - 5cf0e55dbcda820fbce72eb4
+      X-Arequestid:
+      - 8f61e649-e110-462a-ba23-d3e2fc45ba24
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Timing-Allow-Origin:
+      - "*"
+      X-Content-Type-Options:
+      - nosniff
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - atlassian.xsrf.token=de2678d1-9fc4-4491-b5bb-c74d31b504f2_049c37a672e052052d931fcab84b911f3831e957_lin;
+        Path=/; Secure
+    body:
+      encoding: ASCII-8BIT
+      string: '{"expand":"renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations","id":"10006","self":"https://qadtests.atlassian.net/rest/api/2/issue/10006","key":"QAD-7","fields":{"statuscategorychangedate":"2019-05-31T10:41:27.498+0100","issuetype":{"self":"https://qadtests.atlassian.net/rest/api/2/issuetype/10008","id":"10008","description":"This
+        is the Xray Test Execution Issue Type. Used to execute test cases already
+        defined.","iconUrl":"https://qadtests.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10515&avatarType=issuetype","name":"Test
+        Execution","subtask":false,"avatarId":10515},"timespent":null,"customfield_10030":null,"project":{"self":"https://qadtests.atlassian.net/rest/api/2/project/10000","id":"10000","key":"QAD","name":"QAD","projectTypeKey":"software","simplified":false,"avatarUrls":{"48x48":"https://qadtests.atlassian.net/secure/projectavatar?pid=10000&avatarId=10415","24x24":"https://qadtests.atlassian.net/secure/projectavatar?size=small&s=small&pid=10000&avatarId=10415","16x16":"https://qadtests.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10000&avatarId=10415","32x32":"https://qadtests.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10000&avatarId=10415"}},"fixVersions":[{"self":"https://qadtests.atlassian.net/rest/api/2/version/10000","id":"10000","description":"","name":"1.0","archived":false,"released":false}],"aggregatetimespent":null,"resolution":null,"customfield_10027":null,"customfield_10028":null,"customfield_10029":null,"resolutiondate":null,"workratio":-1,"watches":{"self":"https://qadtests.atlassian.net/rest/api/2/issue/QAD-7/watchers","watchCount":1,"isWatching":true},"lastViewed":null,"created":"2019-05-31T10:41:27.314+0100","customfield_10020":null,"customfield_10021":null,"customfield_10022":"0|i0001b:","priority":{"self":"https://qadtests.atlassian.net/rest/api/2/priority/3","iconUrl":"https://qadtests.atlassian.net/images/icons/priorities/medium.svg","name":"Medium","id":"3"},"customfield_10026":null,"labels":[],"customfield_10016":null,"customfield_10017":null,"customfield_10018":{"hasEpicLinkFieldDependency":false,"showField":false,"nonEditableReason":{"reason":"PLUGIN_LICENSE_ERROR","message":"Portfolio
+        for Jira must be licensed for the Parent Link to be available."}},"customfield_10019":null,"aggregatetimeoriginalestimate":null,"timeestimate":null,"versions":[],"issuelinks":[],"assignee":null,"updated":"2019-05-31T10:41:27.314+0100","status":{"self":"https://qadtests.atlassian.net/rest/api/2/status/10001","description":"","iconUrl":"https://qadtests.atlassian.net/","name":"To
+        Do","id":"10001","statusCategory":{"self":"https://qadtests.atlassian.net/rest/api/2/statuscategory/2","id":2,"key":"new","colorName":"blue-gray","name":"To
+        Do"}},"components":[],"timeoriginalestimate":null,"description":"This execution
+        is automatically created when importing execution results from an external
+        source","customfield_10010":null,"customfield_10014":null,"timetracking":{},"customfield_10015":null,"customfield_10005":null,"customfield_10006":null,"customfield_10007":null,"security":null,"customfield_10008":null,"aggregatetimeestimate":null,"customfield_10009":null,"attachment":[],"summary":"Execution
+        of automated tests 2019-05-31 10:41:24","creator":{"self":"https://qadtests.atlassian.net/rest/api/2/user?accountId=5cf0e55dbcda820fbce72eb4","name":"admin","key":"admin","accountId":"5cf0e55dbcda820fbce72eb4","emailAddress":"nocala@skymailgroup.com","avatarUrls":{"48x48":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue","24x24":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue","16x16":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue","32x32":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"},"displayName":"QAdmin
+        Tests","active":true,"timeZone":"Europe/Lisbon","accountType":"atlassian"},"subtasks":[],"reporter":{"self":"https://qadtests.atlassian.net/rest/api/2/user?accountId=5cf0e55dbcda820fbce72eb4","name":"admin","key":"admin","accountId":"5cf0e55dbcda820fbce72eb4","emailAddress":"nocala@skymailgroup.com","avatarUrls":{"48x48":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue","24x24":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue","16x16":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue","32x32":"https://avatar-cdn.atlassian.com/60410ca24ed9b1c282765a442a39e1bd?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F60410ca24ed9b1c282765a442a39e1bd%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"},"displayName":"QAdmin
+        Tests","active":true,"timeZone":"Europe/Lisbon","accountType":"atlassian"},"customfield_10000":"{}","aggregateprogress":{"progress":0,"total":0},"customfield_10001":null,"customfield_10002":null,"customfield_10003":null,"customfield_10004":null,"environment":null,"duedate":null,"progress":{"progress":0,"total":0},"votes":{"self":"https://qadtests.atlassian.net/rest/api/2/issue/QAD-7/votes","votes":0,"hasVoted":false},"comment":{"comments":[],"maxResults":0,"total":0,"startAt":0},"worklog":{"startAt":0,"maxResults":20,"total":0,"worklogs":[]}}}'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 09:57:55 GMT
+- request:
+    method: post
+    uri: https://xray.cloud.xpand-it.com/api/v1/authenticate
+    body:
+      encoding: UTF-8
+      string: client_id=client_id&client_secret=client_secret
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Length:
+      - '121'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 31 May 2019 09:57:56 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Access-Token:
+      - access_bearer_token
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '340'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '"access_bearer_token"'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 09:57:56 GMT
+- request:
+    method: post
+    uri: https://xray.cloud.xpand-it.com/api/v1/import/execution
+    body:
+      encoding: UTF-8
+      string: '{"info":{"startDate":"2019-05-31T10:57:52+01:00","finishDate":"2019-05-31T10:57:55+01:00","version":"1.0","revision":"2.0","testEnvironments":["dummy"]},"tests":[{"testKey":"QAD-6","start":"2019-05-31T10:57:52+01:00","finish":"2019-05-31T10:57:55+01:00","comment":"Expected
+        false to be truthy. (Minitest::Assertion)\n./features/step_definitions/steps.rb:46:in
+        `/^\"(good|bad)\" result is achieved/''\nfeatures/tests.feature:13:in `Then
+        \"bad\" result is achieved''\nfeatures/tests.feature:8:in `Then \"<result>\"
+        result is achieved''","status":"FAILED","examples":["PASSED","FAILED","PASSED"]}],"testExecutionKey":"QAD-7"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer access_bearer_token
+      Content-Length:
+      - '619'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 31 May 2019 09:57:59 GMT
+      Etag:
+      - W/"5b-avzVEQoqL9EY+K1AH4PtQMqYXRQ"
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '91'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"10006","key":"QAD-7","self":"https://qadtests.atlassian.net/rest/api/2/issue/10006"}'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 09:58:00 GMT
+recorded_with: VCR 5.0.0

@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.jira.com/rest/raven/1.0/import/execution
+    body:
+      encoding: UTF-8
+      string: '{"info":{"summary":"Execution of automated tests 2019-05-31 09:12:06","description":"This
+        execution is automatically created when importing execution results from an
+        external source","startDate":"2019-05-31T09:12:05+01:00","finishDate":"2019-05-31T09:12:06+01:00","version":"1.0","revision":"1.0","testEnvironments":["dummy"]},"tests":[{"testKey":"QAT-1","start":"2019-05-31T09:12:05+01:00","finish":"2019-05-31T09:12:06+01:00","comment":"","status":"PASS"}]}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic authorization_token
+      Content-Length:
+      - '459'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 544x13017x1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Asen:
+      - SEN-L13677260
+      Set-Cookie:
+      - JSESSIONID=AD81F3BBBB674B93F1278EB8D587A409; Path=/; HttpOnly
+      - atlassian.xsrf.token=B247-F6KP-EMDR-2G15_92299ca0f04df5692be020726c20b7e44a41798f_lin;
+        Path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 1k8lbgn
+      X-Ausername:
+      - username
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 31 May 2019 08:04:04 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"testExecIssue":{"id":"10040","key":"QAT-23","self":"http://192.168.19.24:8000/rest/api/2/issue/10040"}}'
+    http_version: 
+  recorded_at: Fri, 31 May 2019 08:12:06 GMT
+recorded_with: VCR 5.0.0

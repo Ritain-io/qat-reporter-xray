@@ -1,0 +1,5 @@
+details:
+  name: app1
+  ip: hosts.fe.ip
+  tech: ['php', 'html']
+  refs: [env.foo, env.bla]

@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://xray.cloud.xpand-it.com/api/v1/authenticate
+    body:
+      encoding: UTF-8
+      string: client_id=client_id&client_secret=client_secret
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Length:
+      - '121'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 03 Jun 2019 08:48:29 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Access-Token:
+      - access_bearer_token
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '399'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '"access_bearer_token"'
+    http_version: 
+    adapter_metadata:
+      vcr_decompressed: gzip
+  recorded_at: Mon, 03 Jun 2019 08:48:29 GMT
+- request:
+    method: post
+    uri: https://xray.cloud.xpand-it.com/api/v1/import/feature?projectId&projectKey=QAD&source=QAD
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS0tLS0tUnVieUZvcm1Cb3VuZGFyeWZIaGZsdU4zcXk1UzVoQXMNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0iZmlsZSI7IGZpbGVuYW1lPSJmZWF0dXJlcy56aXAiDQpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL3ppcA0KDQpQSwMEFAAAAAgADk7DTix35SSrAAAAdwEAABkAAABmZWF0dXJlcy9leGFtcGxlMS5mZWF0dXJlrY5NCsIwEEb3PcV3AYV0mVUR0QMouJSYjG3QJJKforc3ja1/4M7dzHvM8BqVjLntjyRi8sSq1WPgWA4cIwerKmAh5Kn1LlnFIXB4blkBa92TRXCGcPE0CxSjtm0Y7pogyQqvHUOjFWcZbUbCMTmwOft+JJ1VOmpnQzG7bhJCFgqR04xQVPR20AKeQjpH6Gxlp6kn9dFQl4b6V0P9jwYLul5IRlJvNdbFV9EdUEsDBBQAAAAIAA5Ow06uQY/f1QAAAMwCAAAZAAAAZmVhdHVyZXMvZXhhbXBsZTIuZmVhdHVyZd2QvQrCMBSF9z7FoQ8gmOpSRDr4MzooOEpsrhpoEmnaotCHN01bsajg7HZzvtzk4ySiVOp+OBEvypxYsGqHGIsmR5eDBQGQ2JQ0z6UZI5Eijly07ZIYPQMbjR0A1rIiDWsUITVayEIabT3ZX3rAU5+Cuy8UF+TxrsEcOdkyKyAdTS+SKhIDB+YdJi8O2JRFJjW9uJg2cU7sZ6dw1lrNw06vURjKhbNWzl35bAksb1xdM7KxPwF1/1jdr9RPcjZGDIZ3cuTCJ4MKIl/B9NcKoj+p4OvOA1BLAQI0AxQAAAAIAA5Ow04sd+UkqwAAAHcBAAAZAAAAAAAAAAEAAAC0gQAAAABmZWF0dXJlcy9leGFtcGxlMS5mZWF0dXJlUEsBAjQDFAAAAAgADk7DTq5Bj9/VAAAAzAIAABkAAAAAAAAAAQAAALSB4gAAAGZlYXR1cmVzL2V4YW1wbGUyLmZlYXR1cmVQSwUGAAAAAAIAAgCOAAAA7gEAAAAADQotLS0tLS1SdWJ5Rm9ybUJvdW5kYXJ5ZkhoZmx1TjNxeTVTNWhBcy0tDQo=
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer access_bearer_token
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '845'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryfHhfluN3qy5S5hAs
+      Host:
+      - xray.cloud.xpand-it.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 03 Jun 2019 08:48:33 GMT
+      Etag:
+      - W/"271-pcWgyrTMXhG0+HWMqE2GIPdXC+0"
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '625'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[],"updatedOrCreatedTests":[{"id":"10001","key":"QAD-2","self":"https://qadtests.atlassian.net/rest/api/2/issue/10001"},{"id":"10000","key":"QAD-1","self":"https://qadtests.atlassian.net/rest/api/2/issue/10000"},{"id":"10005","key":"QAD-6","self":"https://qadtests.atlassian.net/rest/api/2/issue/10005"},{"id":"10004","key":"QAD-5","self":"https://qadtests.atlassian.net/rest/api/2/issue/10004"},{"id":"10003","key":"QAD-4","self":"https://qadtests.atlassian.net/rest/api/2/issue/10003"}],"updatedOrCreatedPreconditions":[{"id":"10002","key":"QAD-3","self":"https://qadtests.atlassian.net/rest/api/2/issue/10002"}]}'
+    http_version: 
+    adapter_metadata:
+      vcr_decompressed: gzip
+  recorded_at: Mon, 03 Jun 2019 08:48:33 GMT
+recorded_with: VCR 5.0.0

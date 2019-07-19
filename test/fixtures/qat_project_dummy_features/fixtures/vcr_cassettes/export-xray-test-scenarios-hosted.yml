@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test.jira.com/rest/raven/1.0/export/test?fz=true&keys=QAT-2%3BQAT-1%3BQAT-4%3BQAT-6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.4p296
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic authorization_token
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 155x13090x1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Asen:
+      - SEN-L13677260
+      Set-Cookie:
+      - JSESSIONID=90623B10E5A8E2E80E0AC91752AFED11; Path=/; HttpOnly
+      - atlassian.xsrf.token=B247-F6KP-EMDR-2G15_1a81f3818fbd5da4f4ff1a8e47d573d3f0f2d9b3_lin;
+        Path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 6grl01
+      X-Ausername:
+      - username
+      Content-Disposition:
+      - attachment; filename="FeatureBundle.zip"
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Content-Type:
+      - application/octet-stream;charset=UTF-8
+      Content-Length:
+      - '619'
+      Date:
+      - Sat, 01 Jun 2019 01:35:15 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        UEsDBBQACAgIAGcUwU4AAAAAAAAAAAAAAAAJAAAAMS5mZWF0dXJljZAxC8IwEIXn9Fcc3a00OhWROqijiAXn2Jw20CbStMWhP94raWgRQSGQl3cvx913QNG0NSYQBCxg6XmXLTikd+faJb5E9SyRR6MDqZLJGlKboxa1Mjxgl1HCqW1KpamVL4JxDvCIcuyoOtRgTYWQGy1Vo4y25F8Lb4cbkQ/uNgQnQFmohERKZUMq3NBQbdlQwIkhIPJCYYeSQnTY3o1saSV6sd636v2X3hcexkgAmInPwk0MNwk24Yl/4VlNeOIJzwwLj+K/cLjBaUFqPKcgviz/BlBLBwjyJbMZ0wAAAMgBAABQSwMEFAAICAgAZxTBTgAAAAAAAAAAAAAAAA8AAAAyX1FBVC02LmZlYXR1cmVVjTELwjAQhefkVxw4txIQh0zRQWex4HwkZ3tok5KkxZ9vWtvB7fF9d+9dCPMYSYOU4oz21cYweqelEDtzOzXVsaQrT+QhhZ5giFQlypl9m4opT1Isdwcwz19V2tMH++FNql4JGHZagUmWPEYOSor7GjVsEFSt/rds8I4zBz8vPboNo10YYCnu0VGRzSwRyvb4zsDF2Y5pIvcFUEsHCPgV9lKaAAAA3gAAAFBLAQIUABQACAgIAGcUwU7yJbMZ0wAAAMgBAAAJAAAAAAAAAAAAAAAAAAAAAAAxLmZlYXR1cmVQSwECFAAUAAgICABnFMFO+BX2UpoAAADeAAAADwAAAAAAAAAAAAAAAAAKAQAAMl9RQVQtNi5mZWF0dXJlUEsFBgAAAAACAAIAdAAAAOEBAAAAAA==
+    http_version: 
+  recorded_at: Sat, 01 Jun 2019 01:43:18 GMT
+recorded_with: VCR 5.0.0

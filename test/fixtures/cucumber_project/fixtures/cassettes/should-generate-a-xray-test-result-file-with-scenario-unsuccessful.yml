@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test.jira.com/rest/api/2/issue/QAT-7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic authorization_token
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 954x12988x1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Asen:
+      - SEN-L13677260
+      Set-Cookie:
+      - JSESSIONID=8B7C1DAEF2EFF7CF073AB97328D0ABA6; Path=/; HttpOnly
+      - atlassian.xsrf.token=B247-F6KP-EMDR-2G15_d921ebcbd5a12f6654c71a5b6c524a3dd1e391fe_lin;
+        Path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - wsg6l7
+      X-Ausername:
+      - username
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Content-Encoding:
+      - gzip
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 30 May 2019 14:54:03 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary H4sIAAAAAAAAAOxYbW/bNhD+K4IG9MsciaLkNwFB5+VlKFC0Xet2w4JgoCVG5iKJAkn5ZZn/+46iZMtW4jRp0U/Jh9h8ueNzvLvnjr6z6aogeWyHtqB5TAWNLxlNY9nLSUZlT0ZzmpEeL6ggivFc9mjMVEYV6UVzkic05UlvQYWENRp/pIWgkubK7LV7NtOaPYRwAANJ0xsYzpUqQtf1xtjxBiPHGzs4CEcIIReElUsK5mKXSVlSt5G8pWsQ/H0yPRnC6KZCaId3drVLrQuqB09WrwX1EajfQloNYiojwQptBcxuzZIWsaagxLpY0aisVkEw4vlnkR49OebLPOUk1hB4KSIq3YhnTnX1TDlFWiYsl85KkLXLMpLAuoJzTmhzjlPkCZylnQIHdTDIcqaIvLXDG5JKuunZioH3CoBsh3mZpj27EPwfGqmn3lMtVt2S374lv+2VHTIzIAuiiIBLqZwUjFbB6OiBEiwRtDnMSL82H2/iUw/5VRDgYAWfT9Yj2b/0VGYkTV91VHqDlTd4psrVAzp9vPLxM3VmkF1ldqhzAw6NSql4VkX+33D/+oQrOy6zbG1f64xYfTFJCDd+9TQX19lbudhru9jrJMLOz56DtJ9FNGcLGtdx1wMOSSmR24nNdRc4ePAKpkmSCJoQRTuRqlMkNYFdzxyowEMdVREvtUwAwQ90U0pqLNfo0Rbmh8mnTx0rpnNq6eyyRJlbcyKtgkiNGUyXlywnkMpKlGBNxFMuQOCncf/MG6BqwzugtgVtdpijzwwUvxl/oJDhembYd9CmZ0D5W1CXkzdvHwd1Q1h6FNR50D/v48dAeR1QuAUq2IKa/Pr+4/Ti/DiuJeAiMy7UUWBe9fcYMNQBhna48BbXxZ8XZ5+nb979dhwZkxbkFJQwla6tGWV5Yhnu3Edah+kW6qV3gQbjb4Lq7Vj5/fn7x/2ac2WBtsM7PEQ2wZPB5OJ5yK437SyKIcmaTFpycVsVcjs8AeApkeoLo0udsDZG3vgE9U/weOoFoR+EGDvj0ehnBCkHOJZEQS8gn1Vo3apyu0aFkI22XYgy+YeeALcZMzXhCUpUBxgK/WGIxs5w2G+AHbIDrnhgVvcLOg4jOMPX/momcT0ZtCeDerLfnuzXkwNNZYVgXDC1foiX/IcWgpYVPpp6/bA/CBG4CqGHrOg/LpKSGdUV9qrLsniw5WjNr+AO6Cp2YbBHvmBSomPwcNNiV1Cue6bTSll+W4+BMlmS0yc3XkDU4rX+p5PmlMYlETF3Mqgk0Eru6kt3wTQb3XloT1k6iWM4Q3Y3/AJRFLMc1qDNgpbraHMiAf1yuXQSYfZoAdd8dWNM8Y03HsUUx1E8iALie9gbzRAmw2CA8Ov4NMteyVNQtt+pfA+lnV7leygFZfvNyvdQCsogd2Mmi5Ss393ry/tcErUZTgflX/Cc0OxfCnh6uG+ZnAGbguayiA9YwSRHMApx4PgBbpLD0OJTo9NIVa0Quq/7+Zpev9Wmc+uctzuqHbAzsCLhYv08gFEt7eJaO27yI6dLu64i9e3P0pKegEvXh7iqrpJnBdw0vGxMVh/jg8O6BiV3+zzR9ZeUwEBQWyLoitdWTd/Wck5hFU4RaleUtQQYVabworoRPLNIDitKk0JqmQdSzVxKkOi2Kgt33SYYnmoNoSlFonlWVcBOd3loiISumeirt7dPKIvfNPgBs67X0tqVHQvKTtAPkU7tyi5dol9o74X2fhjt1e/7OksF1elEX4LwJQh/ZBAesi+CTeg/pnl4Ftot0i0ET0xI3Nm77/BWUVzptw66R5nXsDPNF0zwPGv9IhCXtP2I+Sr1PDMa7pqvde5kZPXRVJ49kaouCzVRRnzB1bc9dYyCrSLQD2+/L1ztfhoxj7GUJ9Ux28P3EeI9iLVAZclms/kfAAD//wMAFPU//bwVAAA=
+    http_version: 
+  recorded_at: Thu, 30 May 2019 15:02:05 GMT
+- request:
+    method: post
+    uri: http://test.jira.com/rest/raven/1.0/import/execution
+    body:
+      encoding: UTF-8
+      string: '{"info":{"startDate":"2019-05-30T16:02:03+01:00","finishDate":"2019-05-30T16:02:04+01:00","version":"1.0","revision":"1.0","testEnvironments":["dummy"]},"tests":[{"testKey":"QAT-2","start":"2019-05-30T16:02:03+01:00","finish":"2019-05-30T16:02:04+01:00","comment":"Expected
+        false to be truthy. (Minitest::Assertion)\n./features/step_definitions/steps.rb:19:in
+        `/^an expected result is not achieved$/''\nfeatures/tests.feature:11:in `Then
+        an expected result is not achieved''","status":"FAIL"}],"testExecutionKey":"QAT-7"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic authorization_token
+      Content-Length:
+      - '519'
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 954x12989x1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Asen:
+      - SEN-L13677260
+      Set-Cookie:
+      - JSESSIONID=3749E68CBA746872098AD9378D4774C5; Path=/; HttpOnly
+      - atlassian.xsrf.token=B247-F6KP-EMDR-2G15_acf4dac03db598b413ff05c66f0e322467e60e13_lin;
+        Path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - zxiw1g
+      X-Ausername:
+      - username
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 30 May 2019 14:54:03 GMT
+    body:
+      encoding: UTF-8
+      string: '{"testExecIssue": {"id": "10024","key": "QAT-7","self": "http://192.168.19.24:8000/rest/api/2/issue/10024"}}'
+    http_version: 
+  recorded_at: Thu, 30 May 2019 15:02:05 GMT
+recorded_with: VCR 5.0.0

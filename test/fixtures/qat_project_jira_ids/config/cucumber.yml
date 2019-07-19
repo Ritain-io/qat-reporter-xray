@@ -1,0 +1,16 @@
+pretty: &pretty --format pretty
+
+all: &all >
+  --format pretty
+  --format html --out public/index.html
+  --format junit --out public/
+  --format QAT::Formatter::Xray --out public/xray.json
+  --strict
+  --tags ~@wip
+
+xray: &xray >
+  --format QAT::Formatter::Xray --out public/xray.json
+  --strict
+  --tags ~@wip
+
+default: *xray

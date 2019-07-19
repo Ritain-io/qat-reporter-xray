@@ -1,0 +1,18 @@
+#!/usr/bin/env rake
+#encoding: utf-8
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rake/testtask'
+require 'qat/tasks'
+
+namespace :test do
+  def clear_reports_folder!
+    mkdir_p 'public'
+    rm_rf ::File.join('public', '*')
+  end
+
+  task 'run' do
+    clear_reports_folder!
+    Cucumber::Rake::Task.new("run").runner.run
+  end
+end

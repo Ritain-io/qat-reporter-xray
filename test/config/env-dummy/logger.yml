@@ -1,0 +1,23 @@
+ log4r_config:
+   loggers:
+     - name: QAT
+       level: INFO
+       outputters:
+       - QAT
+
+   outputters:
+     - name: QAT
+       type: QatConsoleOutputter
+       default: true
+       formatter:
+         type: QatFormatter
+         colors: true
+
+     - type: QatRemoteOutputter
+       name: ReqCoverage
+       gelf_server: "127.0.0.1"
+       gelf_port: 12202
+       facility: 'QAT Requirement Coverage'
+       formatter:
+         type: PatternFormatter
+         pattern: "%m"

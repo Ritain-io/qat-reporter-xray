@@ -1,0 +1,20 @@
+qat: &qat >
+  --format QAT::Formatter::Console
+  --format html --out public/index.html
+  --format junit --out public/
+  --strict
+  --tags ~@wip
+
+standard: &standard >
+  --format pretty
+  --format html --out public/index.html
+  --format junit --out features/reports
+  --strict
+  --tags ~@wip
+
+flat: &flat >
+  --format pretty
+  --strict
+  --tags ~@wip
+
+default: *standard

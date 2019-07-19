@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.jira.com/rest/raven/1.0/import/execution
+    body:
+      encoding: UTF-8
+      string: '{"info":{"summary":"Execution of automated tests 2019-05-30 16:12:48","description":"This
+        execution is automatically created when importing execution results from an
+        external source","startDate":"2019-05-30T16:12:47+01:00","finishDate":"2019-05-30T16:12:48+01:00","version":"1.0","revision":"1.0","testEnvironments":["dummy"]},"tests":[{"testKey":"QAT-1","start":"2019-05-30T16:12:47+01:00","finish":"2019-05-30T16:12:48+01:00","comment":"","status":"PASS"}]}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic authorization_token
+      Content-Length:
+      - '459'
+      Host:
+      - test.jira.com
+  response:
+    status:
+      code: 500
+      message:
+    headers:
+      Content-Type:
+      - text/html
+      Date:
+      - Thu, 30 May 2019 15:12:47 GMT
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 30 May 2019 15:12:48 GMT
+recorded_with: VCR 5.0.0

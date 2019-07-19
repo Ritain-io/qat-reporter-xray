@@ -1,0 +1,7 @@
+#Uncomment the next lines to manipulate environment variables reported from jenkins
+#env_vars:
+#  add:
+#    - EXECUTOR_NUMBER
+#    - JENKINS_URL
+#  ignore:
+#    - SVN_REVISION

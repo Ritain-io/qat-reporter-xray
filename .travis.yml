@@ -1,0 +1,35 @@
+---
+language: ruby
+rvm:
+  - 2.5
+
+jobs:
+  include:
+    - stage: test
+      name: "version"
+      script: ruby -e "require './lib/qat/reporter/xray/version'; raise StandardError.new unless Gem::Specification::load('qat-reporter-xray.gemspec').version.to_s == QAT::Reporter::Xray::VERSION"
+
+    - name: "documentation"
+      script: bundle exec rake qat:devel:validate_yard_doc
+
+    - name: "static"
+      script: bundle exec rake qat:devel:static_analysis:validation
+
+    - name: "unit tests"
+      script: bundle exec rake qat:devel:tests:run
+
+    - name: "gem build"
+      script: gem build *.gemspec
+
+    - stage: release
+      name: "gem release"
+      script: echo "Deploying to rubygems.org ..."
+      deploy:
+        provider: rubygems
+        api_key: $RUBYGEMS_API_KEY
+        gemspec: *.gemspec
+      if: branch = master AND tag IS present
+
+stages:
+  - test
+  - release
