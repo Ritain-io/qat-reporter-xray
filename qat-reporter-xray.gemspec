@@ -24,8 +24,8 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'vcr', '~> 5.0', '>= 5.0.0'
   gem.add_development_dependency 'webmock', '~> 3.6', '>= 3.6.0'
   gem.add_development_dependency 'aruba', '~> 0.14', '>= 0.14.9'
-  gem.add_development_dependency 'qat-devel', '>= 6.0'
-  gem.add_development_dependency 'qat-cucumber', '>= 6.0'
+  gem.add_development_dependency 'qat-devel', '~> 6.0'
+  gem.add_development_dependency 'qat-cucumber', '~> 6.0'
 
   # GEM dependencies
   gem.add_dependency 'qat-logger'
