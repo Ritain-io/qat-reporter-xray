@@ -3,15 +3,18 @@
 
 Gem::Specification.new do |gem|
   gem.name        = 'qat-reporter-xray'
-  gem.version     = '6.0.0'
+  gem.version     = '6.0.1'
   gem.summary     = %q{Utility for Test Reports in Jira Xray.}
   gem.description = <<-DESC
   QAT Reporter Xray bellong to the QAT-Reporter collection of tools and is intended
   for importing test report information in Jira.
   DESC
   gem.email    = 'qatoolkit@readinessit.com'
-  gem.homepage = 'https://github.com/readiness-it/qat-reporter-xray'
+  gem.homepage = 'https://www.readinessit.com'
 
+  gem.metadata    = {
+      'source_code_uri'   => 'https://github.com/readiness-it/qat-reporter-xray'
+  }
   gem.authors = ['QAT']
   gem.license = 'GPL-3.0'
 
