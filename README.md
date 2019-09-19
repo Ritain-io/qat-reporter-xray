@@ -144,6 +144,12 @@ this task gives a report of test ids in test scenarios in a project without test
 ```
 qat:reporter:xray:tests:report_test_ids
 ```
+
+# Documentation
+
+- [API documentation](https://readiness-it.github.io/qat-reporter-xray/doc/index.html)
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

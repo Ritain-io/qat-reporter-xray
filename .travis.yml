@@ -17,6 +17,13 @@ jobs:
     - name: "documentation"
       script: bundle exec rake qat:devel:validate_yard_doc
       if: tag IS blank
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        keep_history: true
+        on:
+          branch: master
 
 #    - name: "static"
 #      script: bundle exec rake qat:devel:static_analysis:validation
