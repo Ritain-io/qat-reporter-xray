@@ -147,7 +147,7 @@ qat:reporter:xray:tests:report_test_ids
 
 # Documentation
 
-- [API documentation](https://readiness-it.github.io/qat-reporter-xray/doc/index.html)
+- [API documentation](https://readiness-it.github.io/qat-reporter-xray/)
 
 
 ## Development
