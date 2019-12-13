@@ -24,10 +24,8 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       "this scenario outline has tags": "features/some_folder/example2.feature:11"
      },
      "mapping": {
-
      },
      "duplicate": {
-
      }
     }
     """
@@ -62,10 +60,8 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       "this scenario outline has tags": "features/some_folder/example2.feature:11"
      },
      "mapping": {
-
      },
      "duplicate": {
-
      }
     }
     """
@@ -95,7 +91,6 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     {
      "max": 4,
      "untagged": {
-
      },
      "mapping": {
       "1": {
@@ -116,7 +111,6 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       }
      },
      "duplicate": {
-
      }
     }
     """
@@ -147,7 +141,6 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       }
      },
      "duplicate": {
-
      }
     }
     """
@@ -187,7 +180,6 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       }
      },
      "duplicate": {
-
      }
     }
     """
@@ -216,7 +208,6 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     {
      "max": 26,
      "untagged": {
-
      },
      "mapping": {
       "23": {
@@ -237,7 +228,6 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       }
      },
      "duplicate": {
-
      }
     }
     """
@@ -257,13 +247,10 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     {
      "max": 0,
      "untagged": {
-
      },
      "mapping": {
-
      },
      "duplicate": {
-
      }
     }
     """
@@ -288,13 +275,10 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     {
      "max": 0,
      "untagged": {
-
      },
      "mapping": {
-
      },
      "duplicate": {
-
      }
     }
     """
@@ -314,13 +298,10 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     {
      "max": 0,
      "untagged": {
-
      },
      "mapping": {
-
      },
      "duplicate": {
-
      }
     }
     """
@@ -345,13 +326,10 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     {
      "max": 0,
      "untagged": {
-
      },
      "mapping": {
-
      },
      "duplicate": {
-
      }
     }
     """
