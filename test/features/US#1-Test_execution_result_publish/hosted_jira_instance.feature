@@ -125,7 +125,7 @@ Feature: Test execution result publish - Hosted
         When some actions are made
         Then an expected result is not achieved
     """
-    And a test execution with id "QAT-7"
+#    And a test execution with id "QAT-7"
 
     When I run `cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json`
     Then the output from "cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json" should contain "1 scenario (1 failed)"
