@@ -109,41 +109,41 @@ Feature: Test execution result publish - Hosted
     }
     """
 
-#  @test#7
-#  Scenario: Should generate a xray test result file with scenario unsuccessful
-#    Given a file named "features/tests.feature" with:
-#    """
-#    @STORY_QAT-1 @some_tag @foo @bar
-#    Feature: Tagged feature
-#
-#      Background: a background
-#        Given some pre-settings
-#
-#      @tag4534 @TEST_QAT-2
-#      Scenario: scenario 2
-#        Given some conditions
-#        When some actions are made
-#        Then an expected result is not achieved
-#    """
-##    And a test execution with id "QAT-7"
-#
-#    When I run `cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json`
-#    Then the output from "cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json" should contain "1 scenario (1 failed)"
-#    And the exit status should be 1
-#    And a file named "public/xray.json" should match:
-#    """
-#    {
-#      "tests": \[
-#        {
-#          "testKey": "QAT-2",
-#          "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-#          "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-#          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:19[^"]+",
-#          "status": "FAIL"
-#        }
-#      \]
-#    }
-#    """
+  @test#7
+  Scenario: Should generate a xray test result file with scenario unsuccessful
+    Given a file named "features/tests.feature" with:
+    """
+    @STORY_QAT-1 @some_tag @foo @bar
+    Feature: Tagged feature
+
+      Background: a background
+        Given some pre-settings
+
+      @tag4534 @TEST_QAT-2
+      Scenario: scenario 2
+        Given some conditions
+        When some actions are made
+        Then an expected result is not achieved
+    """
+    And a test execution with id "QAT-7"
+
+    When I run `cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json`
+    Then the output from "cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json" should contain "1 scenario (1 passed)"
+    And the exit status should be 1
+    And a file named "public/xray.json" should match:
+    """
+    {
+      "tests": \[
+        {
+          "testKey": "QAT-2",
+          "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
+          "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:19[^"]+",
+          "status": "FAIL"
+        }
+      \]
+    }
+    """
 
   @test#32
   Scenario: Should fail test execution on error communicating with jira
