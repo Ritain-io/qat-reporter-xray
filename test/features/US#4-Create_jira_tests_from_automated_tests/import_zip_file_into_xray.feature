@@ -16,7 +16,7 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Im
     """
     features\/.*.feature
     """
-    And a 648 byte file named "features.zip" should exist
+    And a 643 byte file named "features.zip" should exist
     And the exit status should be 0
 
   @test#23
