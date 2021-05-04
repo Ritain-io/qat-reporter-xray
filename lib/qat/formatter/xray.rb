@@ -6,6 +6,7 @@ require 'time'
 require 'base64'
 require_relative '../reporter/xray/config'
 require_relative '../reporter/xray/test_execution'
+require 'qat/formatter/helper'
 
 module QAT
   # Namespace for custom Cucumber formatters and helpers.
@@ -16,12 +17,17 @@ module QAT
     class Xray
       include ::Cucumber::Formatter::Io
       include QAT::Logger
+      include QAT::Formatter::Helper
 
-      #@api private
-      def initialize(runtime, path_or_io, options)
-        @io      = ensure_io(path_or_io)
-        @options = options
-        @tests   = []
+      def initialize(config)
+        @config         = config
+        @io             = ensure_io(config.out_stream, config.error_stream)
+        @ast_lookup     = ::Cucumber::Formatter::AstLookup.new(config)
+        @feature_hashes = []
+        config.on_event :test_case_started, &method(:on_test_case_started)
+        config.on_event :test_case_finished, &method(:on_test_case_finished)
+        config.on_event :test_run_finished, &method(:on_test_run_finished)
+        @tests = []
       end
 
       #@api private
@@ -30,22 +36,32 @@ module QAT
       end
 
       #@api private
-      def before_test_case(test_case)
-        @current_scenario = test_case.source[1]
+      def on_test_case_started(event)
+        return if @config.dry_run?
+        @row_number = nil
+        test_case   = event.test_case
+        build(test_case, @ast_lookup)
+        @current_scenario = @scenario
 
         @exception = nil
 
         @start_time   = Time.now
         @evidences    = []
         @file_counter = 0
+        @current_scenario[:tags].each do |tag|
+          tag_name tag
+        end
+
       end
 
       #@api private
-      def after_test_case(_, status)
+      def on_test_case_finished event
+        return if @config.dry_run?
+        _test_case, result = *event.attributes
         # When jira type is cloud the test result string must be different (accordingly with xray api)
-        test_status = if status.is_a? ::Cucumber::Core::Test::Result::Passed
+        test_status = if result.passed?
                         jira_type == 'cloud' ? 'PASSED' : 'PASS'
-                      elsif status.is_a? ::Cucumber::Core::Test::Result::Failed
+                      elsif result.failed?
                         jira_type == 'cloud' ? 'FAILED' : 'FAIL'
                       else
                         'NO RUN'
@@ -53,10 +69,10 @@ module QAT
 
         @end_time = Time.now
 
-        comment = status.respond_to?(:exception) ? build_exception(status.exception) : ''
+        comment = result.respond_to?(:exception) ? build_exception(result.exception) : ''
 
         log.warn 'Jira ID is not defined!' unless @test_jira_id
-        if @current_scenario.is_a? ::Cucumber::Core::Ast::ScenarioOutline
+        if @examples_values
           save_current_scenario_outline(test_status, comment)
         else
           save_current_scenario(test_status, comment)
@@ -64,10 +80,12 @@ module QAT
 
       end
 
-      #@api private
-      def after_features(*_)
+
+      def on_test_run_finished _event
+        return if @config.dry_run?
         publish_result
       end
+
 
       def embed(src, mime_type, label)
 

@@ -3,18 +3,18 @@ qat: &qat >
   --format html --out public/index.html
   --format junit --out public/
   --strict
-  --tags ~@wip
+  --tags 'not @wip'
 
 standard: &standard >
   --format pretty
   --format html --out public/index.html
   --format junit --out features/reports
   --strict
-  --tags ~@wip
+  --tags 'not @wip'
 
 flat: &flat >
   --format pretty
   --strict
-  --tags ~@wip
+  --tags 'not @wip'
 
 default: *standard
