@@ -127,7 +127,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-2",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:19[^"]+",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^"]+",
           "status": "FAILED"
         }
       \]
@@ -199,7 +199,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-5",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:46.*([\n]*.)*",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^,]+",
           "status": "FAILED",
           "examples": \[
             "PASSED",
@@ -242,7 +242,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-6",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:46.*([\n]*.)*",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^,]+",
           "status": "FAILED",
           "examples": \[
             "PASSED",
@@ -285,7 +285,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-2",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:19[^"]+",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^,]+",
           "status": "FAILED",
           "evidences": \[
             {

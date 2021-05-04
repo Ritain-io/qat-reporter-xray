@@ -48,5 +48,5 @@ Then(/^"(good|bad)" result is achieved/) do |result|
 end
 
 And(/^I embed evidence with source "([^"]*)" with mime type "([^"]*)" and label "([^"]*)"$/) do |src, mime_type, label|
-  embed(src, mime_type, label)
+  attach(src, mime_type)
 end

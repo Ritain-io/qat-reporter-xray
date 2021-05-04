@@ -87,7 +87,8 @@ module QAT
       end
 
 
-      def embed(src, mime_type, label)
+
+      def attach(src, mime_type)
 
 
         data = if File.file?(src)
@@ -104,10 +105,8 @@ module QAT
 
         file_name = if File.file?(src)
                       File.basename(src)
-                    elsif label.to_s.empty?
-                      "file_#{@file_counter += 1}.#{ext}"
                     else
-                      "#{label}.#{ext}"
+                      "#{src}.#{ext}"
                     end
 
         @evidences << { data: data, filename: file_name, contentType: mime_type }
