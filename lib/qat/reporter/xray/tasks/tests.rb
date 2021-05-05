@@ -60,6 +60,7 @@ namespace :qat do
           report.tag_untagged!
         end
 
+
         desc 'Generate features zip file to import in Xray'
         task :zip_features do
           require 'zip'

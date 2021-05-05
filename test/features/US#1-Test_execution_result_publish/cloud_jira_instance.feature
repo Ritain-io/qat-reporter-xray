@@ -127,7 +127,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-2",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:19[^"]+",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^"]+",
           "status": "FAILED"
         }
       \]
@@ -199,7 +199,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-5",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:46.*([\n]*.)*",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^,]+",
           "status": "FAILED",
           "examples": \[
             "PASSED",
@@ -242,7 +242,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-6",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:46.*([\n]*.)*",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^,]+",
           "status": "FAILED",
           "examples": \[
             "PASSED",
@@ -285,7 +285,7 @@ Feature: Test execution result publish - Cloud
           "testKey": "QAD-2",
           "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
           "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-          "comment": "Expected false to be truthy. \(Minitest::Assertion\)\n.\/features\/step_definitions\/steps.rb:19[^"]+",
+          "comment": "Expected false to be truthy. \(Minitest::Assertion\)[^,]+",
           "status": "FAILED",
           "evidences": \[
             {
@@ -355,48 +355,3 @@ Feature: Test execution result publish - Cloud
     Then the output should contain "Importing Test results to Test Execution 'QAD-7'"
     Then the output should match /QAT::Reporter::Xray::Publisher::Base::Client: {\n  "id": "\d+",\n  "key": "QAD-\d+",\n  "self": ".*"\n}/
 
-#  @test#29
-#  Scenario: Should generate a xray test result file with scenario successful and embed video evidence in cloud
-#    Given a file named "features/tests.feature" with:
-#    """
-#    @STORY_QAD-7 @some_tag @foo @bar
-#    Feature: Tagged feature
-#
-#      Background: a background
-#        Given some pre-settings
-#        And I embed evidence with source "public/test_fail.mp4" with mime type "video/mp4" and label "test fail video"
-#
-#      @TEST_QAD-1 @other_tag
-#      Scenario: scenario 1
-#        Given some conditions
-#        When some actions are made
-#        Then a result is achieved
-#    """
-#    And a test execution with id "QAD-7"
-#
-#    When I run `cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json`
-#    Then the output from "cucumber --expand --format pretty --format QAT::Formatter::Xray --out public/xray.json" should contain "1 scenario (1 passed)"
-#    And the exit status should be 0
-#    And a file named "public/xray.json" should match:
-#    """
-#    {
-#      "tests": \[
-#        {
-#          "testKey": "QAD-1",
-#          "start": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-#          "finish": "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[\+|\-]\d{2}:\d{2}",
-#          "comment": "",
-#          "status": "PASSED",
-#          "evidences": \[
-#            {
-#              "data": ".*",
-#              "filename": ".*.mp4",
-#              "contentType": "video/mp4"
-#            }
-#          \]
-#        }
-#      \]
-#    }
-#    """
-#    Then the output should contain "Importing Test results to Test Execution 'QAD-7'"
-#    Then the output should match /QAT::Reporter::Xray::Publisher::Base::Client: {\n  "id": "\d+",\n  "key": "QAD-\d+",\n  "self": ".*"\n}/
