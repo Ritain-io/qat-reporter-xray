@@ -1,95 +1,57 @@
 require 'cucumber/formatter/io'
 require 'json'
+require 'qat/formatter/test_ids'
+require 'qat/formatter/helper'
 
 module QAT
   module Formatter
     class Xray
-      class TestIds
+      class TestIds <QAT::Formatter::TestIds
         include Cucumber::Formatter::Io
+        include QAT::Formatter::Helper
 
-        def initialize(runtime, path_or_io, options)
-          @io                 = ensure_io(path_or_io)
-          @tags               = []
-          @scenario_tags      = []
+        def initialize(config)
+          @config             = config
           @no_test_id         = {}
           @max_test_id        = 0
           @duplicate_test_ids = {}
           @test_id_mapping    = {}
-          @options            = options
+          @io                 = ensure_io(config.out_stream, config.error_stream)
+          @ast_lookup         = ::Cucumber::Formatter::AstLookup.new(@config)
+          config.on_event :test_case_started, &method(:on_test_case_started)
+          config.on_event :test_run_finished, &method(:on_test_run_finished)
         end
 
-        def before_feature(feature)
-          @in_scenarios = false
-        end
 
-        def tag_name(tag_name)
-          @scenario_tags << tag_name if @in_scenarios
-        end
-
-        def after_tags(tags)
-          @in_scenarios = true unless @in_scenarios
-        end
-
-        def scenario_name(keyword, name, file_colon_line, source_indent)
-          if @scenario_tags.any? { |tag| tag.match(/@id:(\d+)/) }
-            id           = @scenario_tags.map { |tag| tag.match(/@id:(\d+)/) }.compact.first.captures.first.to_i
+        ###Override because of tag condition
+        def scenario_name
+          path = "#{@current_feature[:uri]}:#{@scenario[:line]}"
+          scenario_tags= @scenario[:tags]
+          if scenario_tags.any? { |tag| tag.match(/@id:(\d+)/) }
+              id           = scenario_tags.map { |tag| tag.match(/@id:(\d+)/) }.compact.first.captures.first.to_i
             @max_test_id = id if id > @max_test_id
 
-            test_id_info = { name: name,
-                             path: file_colon_line }
+            test_id_info = { name: @scenario[:name],
+                             path:  path}
 
             if @test_id_mapping[id]
               if @duplicate_test_ids[id]
-                @duplicate_test_ids[id] << test_id_info
+                @duplicate_test_ids[id].find do |dup|
+                  @exist = true if dup[:path]== test_id_info[:path]
+                end
+                @duplicate_test_ids[id] << test_id_info unless @exist
               else
-                @duplicate_test_ids[id] = [@test_id_mapping[id], test_id_info]
+                @duplicate_test_ids[id] = [@test_id_mapping[id], test_id_info] unless @test_id_mapping[id][:path] == test_id_info[:path]
               end
             else
               @test_id_mapping[id] = test_id_info
             end
-
           else
-            @no_test_id[name] = file_colon_line unless @scenario_tags.include?('@dummy_test')
+            @no_test_id[@scenario[:name]] = path unless scenario_tags.include?('@dummy_test')
           end
-          @scenario_tags = []
+          @scenario[:tags] = []
         end
 
-        def after_features(features)
-          publish_result
-          @io.flush
-        end
-
-        private
-
-        def publish_result
-          content = {
-            max:       @max_test_id,
-            untagged:  @no_test_id,
-            mapping:   Hash[@test_id_mapping.sort],
-            duplicate: Hash[@duplicate_test_ids.sort]
-          }
-
-          if @duplicate_test_ids.any?
-            dups_info = @duplicate_test_ids.map do |id, dups|
-              text = dups.map { |dup| "Scenario: #{dup[:name]} - #{dup[:path]}" }.join("\n")
-              "TEST ID #{id}:\n#{text}\n"
-            end
-
-            duplicates_info = <<-TXT.gsub(/^\s*/, '')
-          ------------------------------------
-          Duplicate test ids found!
-          ------------------------------------
-          #{dups_info.join("\n")}
-            TXT
-            puts duplicates_info
-          end
-
-          @io.puts(content.to_json({
-                                     indent:    ' ',
-                                     space:     ' ',
-                                     object_nl: "\n"
-                                   }))
-        end
       end
     end
   end

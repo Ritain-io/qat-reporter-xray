@@ -16,17 +16,17 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     Then a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 0,
-     "untagged": {
-      "this scenario has tags": "features/example1.feature:8",
-      "this scenario has no tags": "features/example1.feature:13",
-      "this scenario also has tags": "features/some_folder/example2.feature:5",
-      "this scenario outline has tags": "features/some_folder/example2.feature:11"
-     },
-     "mapping": {
-     },
-     "duplicate": {
-     }
+      "max": 0,
+      "untagged": {
+        "this scenario has tags": "features/example1.feature:8",
+        "this scenario has no tags": "features/example1.feature:13",
+        "this scenario also has tags": "features/some_folder/example2.feature:5",
+        "this scenario outline has tags": "features/some_folder/example2.feature:11"
+      },
+      "mapping": {
+      },
+      "duplicate": {
+      }
     }
     """
     And the exit status should be 0
@@ -40,29 +40,25 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       | CUCUMBER_FORMAT |       |
       | CUCUMBER_OPTS   |       |
     When I run `rake qat:reporter:xray:tests:generate_test_ids`
-    Then the output should match:
+    Then the output should contain:
     """
-    ^Disabling profiles...
     Giving test ids to scenarios:
-    {
-     "features/example1.feature": \[  8,  13\],
-     "features/some_folder/example2.feature": \[  5,  11\]
-    }
+    {"features/example1.feature":[8,13],"features/some_folder/example2.feature":[5,11]}
     """
     And a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 0,
-     "untagged": {
-      "this scenario has tags": "features/example1.feature:8",
-      "this scenario has no tags": "features/example1.feature:13",
-      "this scenario also has tags": "features/some_folder/example2.feature:5",
-      "this scenario outline has tags": "features/some_folder/example2.feature:11"
-     },
-     "mapping": {
-     },
-     "duplicate": {
-     }
+      "max": 0,
+      "untagged": {
+        "this scenario has tags": "features/example1.feature:8",
+        "this scenario has no tags": "features/example1.feature:13",
+        "this scenario also has tags": "features/some_folder/example2.feature:5",
+        "this scenario outline has tags": "features/some_folder/example2.feature:11"
+      },
+      "mapping": {
+      },
+      "duplicate": {
+      }
     }
     """
     And the exit status should be 0
@@ -76,42 +72,38 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       | CUCUMBER_FORMAT |       |
       | CUCUMBER_OPTS   |       |
     And I run `rake qat:reporter:xray:tests:generate_test_ids`
-    And the output should match:
+    And the output should contain:
     """
-    ^Disabling profiles...
     Giving test ids to scenarios:
-    {
-     "features/example1.feature": \[  8,  13\],
-     "features/some_folder/example2.feature": \[  5,  11\]
-    }
+    {"features/example1.feature":[8,13],"features/some_folder/example2.feature":[5,11]}
     """
     When I run `rake qat:reporter:xray:tests:report_test_ids`
     Then a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 4,
-     "untagged": {
-     },
-     "mapping": {
-      "1": {
-       "name": "this scenario has tags",
-       "path": "features/example1.feature:8"
+      "max": 4,
+      "untagged": {
       },
-      "2": {
-       "name": "this scenario has no tags",
-       "path": "features/example1.feature:14"
+      "mapping": {
+        "1": {
+          "name": "this scenario has tags",
+          "path": "features/example1.feature:8"
+        },
+        "2": {
+          "name": "this scenario has no tags",
+          "path": "features/example1.feature:14"
+        },
+        "3": {
+          "name": "this scenario also has tags",
+          "path": "features/some_folder/example2.feature:5"
+        },
+        "4": {
+          "name": "this scenario outline has tags",
+          "path": "features/some_folder/example2.feature:11"
+        }
       },
-      "3": {
-       "name": "this scenario also has tags",
-       "path": "features/some_folder/example2.feature:5"
-      },
-      "4": {
-       "name": "this scenario outline has tags",
-       "path": "features/some_folder/example2.feature:11"
+      "duplicate": {
       }
-     },
-     "duplicate": {
-     }
     }
     """
     And the exit status should be 0
@@ -128,20 +120,20 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     Then a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 23,
-     "untagged": {
-      "this scenario has tags": "features/example1.feature:8",
-      "this scenario has no tags": "features/example1.feature:13",
-      "this scenario outline has no tags": "features/example2.feature:9"
-     },
-     "mapping": {
-      "23": {
-       "name": "this scenario also has no tags",
-       "path": "features/example2.feature:4"
+      "max": 23,
+      "untagged": {
+        "this scenario has tags": "features/example1.feature:8",
+        "this scenario has no tags": "features/example1.feature:13",
+        "this scenario outline has no tags": "features/example2.feature:9"
+      },
+      "mapping": {
+        "23": {
+          "name": "this scenario also has no tags",
+          "path": "features/example2.feature:4"
+        }
+      },
+      "duplicate": {
       }
-     },
-     "duplicate": {
-     }
     }
     """
     And the exit status should be 0
@@ -155,32 +147,28 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       | CUCUMBER_FORMAT |       |
       | CUCUMBER_OPTS   |       |
     When I run `rake qat:reporter:xray:tests:generate_test_ids`
-    Then the output should match:
+    Then the output should contain:
     """
-    ^Disabling profiles...
     Giving test ids to scenarios:
-    {
-     "features/example1.feature": \[  8,  13\],
-     "features/example2.feature": \[  9\]
-    }
+    {"features/example1.feature":[8,13],"features/example2.feature":[9]}
     """
     And a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 23,
-     "untagged": {
-      "this scenario has tags": "features/example1.feature:8",
-      "this scenario has no tags": "features/example1.feature:13",
-      "this scenario outline has no tags": "features/example2.feature:9"
-     },
-     "mapping": {
-      "23": {
-       "name": "this scenario also has no tags",
-       "path": "features/example2.feature:4"
+      "max": 23,
+      "untagged": {
+        "this scenario has tags": "features/example1.feature:8",
+        "this scenario has no tags": "features/example1.feature:13",
+        "this scenario outline has no tags": "features/example2.feature:9"
+      },
+      "mapping": {
+        "23": {
+          "name": "this scenario also has no tags",
+          "path": "features/example2.feature:4"
+        }
+      },
+      "duplicate": {
       }
-     },
-     "duplicate": {
-     }
     }
     """
     And the exit status should be 0
@@ -193,42 +181,38 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       | CUCUMBER_FORMAT |       |
       | CUCUMBER_OPTS   |       |
     And I run `rake qat:reporter:xray:tests:generate_test_ids`
-    And the output should match:
+    And the output should contain:
     """
-    ^Disabling profiles...
     Giving test ids to scenarios:
-    {
-     "features/example1.feature": \[  8,  13\],
-     "features/example2.feature": \[  9\]
-    }
+    {"features/example1.feature":[8,13],"features/example2.feature":[9]}
     """
     When I run `rake qat:reporter:xray:tests:report_test_ids`
     Then a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 26,
-     "untagged": {
-     },
-     "mapping": {
-      "23": {
-       "name": "this scenario also has no tags",
-       "path": "features/example2.feature:4"
+      "max": 26,
+      "untagged": {
       },
-      "24": {
-       "name": "this scenario has tags",
-       "path": "features/example1.feature:8"
+      "mapping": {
+        "23": {
+          "name": "this scenario also has no tags",
+          "path": "features/example2.feature:4"
+        },
+        "24": {
+          "name": "this scenario has tags",
+          "path": "features/example1.feature:8"
+        },
+        "25": {
+          "name": "this scenario has no tags",
+          "path": "features/example1.feature:14"
+        },
+        "26": {
+          "name": "this scenario outline has no tags",
+          "path": "features/example2.feature:10"
+        }
       },
-      "25": {
-       "name": "this scenario has no tags",
-       "path": "features/example1.feature:14"
-      },
-      "26": {
-       "name": "this scenario outline has no tags",
-       "path": "features/example2.feature:10"
+      "duplicate": {
       }
-     },
-     "duplicate": {
-     }
     }
     """
     And the exit status should be 0
@@ -245,13 +229,13 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     Then a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 0,
-     "untagged": {
-     },
-     "mapping": {
-     },
-     "duplicate": {
-     }
+      "max": 0,
+      "untagged": {
+      },
+      "mapping": {
+      },
+      "duplicate": {
+      }
     }
     """
     And the exit status should be 0
@@ -265,21 +249,20 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       | CUCUMBER_FORMAT |       |
       | CUCUMBER_OPTS   |       |
     When I run `rake qat:reporter:xray:tests:generate_test_ids`
-    Then the output should match:
+    Then the output should contain:
     """
-    ^Disabling profiles...
     There are no scenarios without test id.
     """
     And a file named "public/xray_test_ids.json" should contain:
     """
     {
-     "max": 0,
-     "untagged": {
-     },
-     "mapping": {
-     },
-     "duplicate": {
-     }
+      "max": 0,
+      "untagged": {
+      },
+      "mapping": {
+      },
+      "duplicate": {
+      }
     }
     """
     And the exit status should be 0
@@ -296,13 +279,14 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
     Then a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 0,
-     "untagged": {
-     },
-     "mapping": {
-     },
-     "duplicate": {
-     }
+      "max": 0,
+      "untagged": {
+        "Empty Scenario": "features/example1.feature:3"
+      },
+      "mapping": {
+      },
+      "duplicate": {
+      }
     }
     """
     And the exit status should be 0
@@ -316,21 +300,22 @@ Feature: User Story #4: Create jira tests based on existing automated tests - Au
       | CUCUMBER_FORMAT |       |
       | CUCUMBER_OPTS   |       |
     When I run `rake qat:reporter:xray:tests:generate_test_ids`
-    Then the output should match:
+    Then the output should contain:
     """
-    ^Disabling profiles...
-    There are no scenarios without test id.
+    Giving test ids to scenarios:
+    {"features/example1.feature":[3]}
     """
     And a file named "./public/xray_test_ids.json" should contain:
     """
     {
-     "max": 0,
-     "untagged": {
-     },
-     "mapping": {
-     },
-     "duplicate": {
-     }
+      "max": 0,
+      "untagged": {
+        "Empty Scenario": "features/example1.feature:3"
+      },
+      "mapping": {
+      },
+      "duplicate": {
+      }
     }
     """
     And the exit status should be 0
