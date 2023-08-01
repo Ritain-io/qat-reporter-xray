@@ -1,20 +1,22 @@
-qat: &qat >
+default: --profile standard
+standard:
+  --format pretty
+  --format html --out public/index.html
+  --format junit --out public/
+  --strict
+  --tags "not @wip"
+
+coverage:
   --format QAT::Formatter::Console
+  --format QAT::Formatter::ReqCoverage --out public/requirement_coverage.json
   --format html --out public/index.html
   --format junit --out public/
   --strict
   --tags 'not @wip'
 
-standard: &standard >
-  --format pretty
+qat:
+  --format QAT::Formatter::Console
   --format html --out public/index.html
-  --format junit --out features/reports
+  --format junit --out public/
   --strict
   --tags 'not @wip'
-
-flat: &flat >
-  --format pretty
-  --strict
-  --tags 'not @wip'
-
-default: *standard

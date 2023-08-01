@@ -2,7 +2,7 @@
 
 #Uncomment all necessary custom hooks
 
-# AfterConfiguration do
+# BeforeAll do
 #   # Your code here
 # end
 

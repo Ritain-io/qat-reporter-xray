@@ -1,7 +1,7 @@
 #-*- encoding : utf-8 -*-
 require 'vcr'
 
-AfterConfiguration do
+BeforeAll do
   STDOUT.puts "USING VCR CASSETTE '#{ENV['VCR_CASSETTE_NAME']}'"
   VCR.configure do |config|
     config.cassette_library_dir = File.join(File.dirname(__FILE__), '..', '..', 'fixtures', 'cassettes')

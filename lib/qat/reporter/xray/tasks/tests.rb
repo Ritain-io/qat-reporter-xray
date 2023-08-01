@@ -28,7 +28,7 @@ namespace :qat do
 
         desc 'Generates the test id report in JSON'
         task :report_test_ids do
-          FileUtils.mkdir('public') unless File.exists?(File.join(Dir.pwd, 'public'))
+          FileUtils.mkdir('public') unless File.exist?(File.join(Dir.pwd, 'public'))
           ENV['CUCUMBER_OPTS'] = nil
           Cucumber::Rake::Task.new('test_ids', 'Generates test ids as tags for tests without test id') do |task|
             task.bundler       = false
@@ -71,7 +71,7 @@ namespace :qat do
 
           zipfile_name = 'features.zip'
 
-          FileUtils.rm_f(zipfile_name) if File.exists?(zipfile_name)
+          FileUtils.rm_f(zipfile_name) if File.exist?(zipfile_name)
 
           Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
             feature_files.each do |file|

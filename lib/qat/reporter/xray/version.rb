@@ -5,7 +5,7 @@ module QAT
     # Namespace for QAT Reporter's Xray integrations
     class Xray
       # Represents QAT Reporter's Xray integrations' version
-      VERSION = '7.0.0'
+      VERSION = '9.0.0'
     end
   end
 end
